@@ -15,6 +15,7 @@
   --primary-accent-color: #2196f3;
   --primary-bg-color: #ffffff;
   --secondary-bg-color: #2f303a;
+  --secondary-bg-color2: #f5f4fa;
 }
 
 body {
@@ -107,7 +108,7 @@ footer a {
 }
 
 .auth-nav {
-  display: flex;
+  display: inline-flex;
   margin-left: auto;
 }
 
@@ -116,6 +117,27 @@ footer a {
 }
 .auth-nav > li:last-child {
   margin-right: 0;
+}
+
+.auth-mail::before {
+  display: inline-flex;
+  margin-right: 10px;
+  width: 16px;
+  height: 12px;
+  content: '';
+  background-image: url(../images/mail-icon.svg);
+  background-size: contain;
+}
+
+/* Делал маленькие иконки перед лишками */
+.auth-tell::before {
+  display: inline-flex;
+  margin-right: 10px;
+  width: 10px;
+  height: 16px;
+  content: '';
+  background-image: url(../images/tell-icon.svg);
+  background-size: contain;
 }
 
 .logo {
@@ -168,6 +190,17 @@ footer a {
   padding-bottom: 200px;
   background-color: var(--secondary-bg-color);
   text-align: center;
+
+  /* Тут я начал делать фон */
+  max-width: 1600px;
+  max-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-bg.jpg);
+  content: '';
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero-title {
@@ -214,10 +247,6 @@ footer a {
   font-size: 0px;
 }
 
-.features {
-  display: flex;
-}
-
 .section-features {
   padding-top: 94px;
 }
@@ -226,15 +255,41 @@ footer a {
   display: flex;
 }
 
-.features-list > li {
-}
-
 .features-colum {
   width: 270px;
   margin-right: 30px;
 }
+
 .features-colum:last-child {
   margin-right: 0;
+}
+
+/* Сделал общий фон для наложения иконок в Наши особенности */
+.features-colum::before {
+  display: block;
+  height: 120px;
+  content: '';
+  background-color: var(--secondary-bg-color2);
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Накладываю на каждую лишку с подготовленым фоном иконку */
+.features-colum:nth-child(1)::before {
+  background-image: url(../images/features-1.svg);
+}
+
+.features-colum:nth-child(2)::before {
+  background-image: url(../images/features-2.svg);
+}
+
+.features-colum:nth-child(3)::before {
+  background-image: url(../images/features-3.svg);
+}
+
+.features-colum:nth-child(4)::before {
+  background-image: url(../images/features-3.svg);
 }
 
 .features-title {
@@ -280,7 +335,7 @@ footer a {
 /* < !--Наша команда--> */
 
 .team {
-  background-color: #f5f4fa;
+  background-color: var(--secondary-bg-color2);
 }
 
 .member {
@@ -298,6 +353,22 @@ footer a {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+/* Тренировался в многослойный беграунд  
+.member-dscr::after {
+  display: flex;
+  margin-top: 28px;
+  margin-bottom: 9.62px;
+  content: '';
+  height: 22px;
+  width: 270px;
+  background-image: url(../images/instagram.svg), url(../images/tweeter.svg),
+    url(../images/facebook.svg), url(../images/linkedin.svg);
+  background-size: 20px, 20px, 20px 20px, 20px;
+  background-repeat: no-repeat;
+  background-position: 44px, 98px, 157px, 206px;
+}
+*/
 
 .team-title {
   font-weight: 700;
@@ -332,6 +403,25 @@ footer a {
 
 .member-dscr {
   padding-bottom: 30px;
+}
+
+.partners {
+  display: flex;
+}
+
+.partners-title {
+  margin-bottom: 50px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+
+  text-align: center;
+}
+
+.partners-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* < !--Футер--> */
@@ -383,6 +473,85 @@ address p {
 .contacts .link:focus {
   color: var(--primary-accent-color);
 }
+
+.footer-title {
+  margin-bottom: 20px;
+  color: var(--primary-bg-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.footer-social {
+  margin-left: 70px;
+}
+
+.footer {
+  display: flex;
+}
+
+.footer-list {
+  display: flex;
+}
+
+.footer-list li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-list li:hover {
+  background-color: var(--primary-accent-color);
+  border-radius: 50%;
+}
+.footer-instagram {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url(../images/instagram-foot.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-tweeter {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url(../images/tweeter-foot.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-facebook {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url(../images/facebook-foot.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-linkein {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url(../images/linkedin-foot.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 /* ----------------------------------------------------- 2 -------------------------------------------------- */
 /* < !-- Портфолио --> */
 .portfolio-buttons {
