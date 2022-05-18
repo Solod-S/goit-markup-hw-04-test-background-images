@@ -354,7 +354,7 @@ footer a {
   padding-bottom: 30px;
 }
 
-/* Тренировался в многослойный беграунд  
+/* Тренировался в многослойный беграунд*/
 .member-dscr::after {
   display: flex;
   margin-top: 28px;
@@ -368,7 +368,6 @@ footer a {
   background-repeat: no-repeat;
   background-position: 44px, 98px, 157px, 206px;
 }
-*/
 
 .team-title {
   font-weight: 700;
