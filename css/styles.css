@@ -343,10 +343,12 @@ footer a {
 }
 
 .member-li {
-  margin-right: 30px;
-
   width: 270px;
   background-color: var(--primary-bg-color);
+}
+
+.member-li:not(:last-child) {
+  margin-right: 30px;
 }
 
 .member-dscr {
