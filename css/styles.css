@@ -217,7 +217,7 @@ footer a {
 
 .button {
   display: inline-block;
-  padding: 10px;
+  padding: 10px 32px;
 
   color: var(--primary-bg-color);
   background-color: var(--primary-accent-color);
@@ -342,9 +342,20 @@ footer a {
   display: flex;
 }
 
+/* overflow: hidden - если захотим скруглить края сверху */
+
 .member-li {
   width: 270px;
   background-color: var(--primary-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
+}
+
+.member-img {
+  display: block;
+  max-width: 100%;
 }
 
 .member-li:not(:last-child) {
